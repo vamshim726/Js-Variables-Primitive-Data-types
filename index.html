@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript Primitive Data Types & Concepts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    nav a {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+ 
+    .card {
+      border: 1px solid #aaa;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 300px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h5>24-June-2025 </h2>
+  <h1>JavaScript Tasks - Data Types & Concepts</h1>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#primitives">1. Primitive Data Types & typeof</a>
+    <a href="#null-vs-undefined">2. Undefined vs Null Alert</a>
+    <a href="#profile-card">3. Profile Card with Concatenation</a>
+    <a href="#research">4. Research: defer, async & document.write()</a>
+  </nav>
+
+  <!-- 1. Primitive Data Types -->
+  <section id="primitives">
+    <h2>1. Primitive Data Types</h2>
+    <p>Check the browser console for output of various primitive data types and their types using <code>typeof</code>.</p>
+  </section>
+
+  <!-- 2. Null vs Undefined -->
+  <section id="null-vs-undefined">
+    <h2>2. Difference between undefined and null</h2>
+    <p>This section triggers alerts on page load to show the differences.</p>
+  </section>
+
+  <!-- 3. Profile Card -->
+  <section id="profile-card">
+    <h2>3. Profile Card using Variables & Concatenation</h2>
+    <div class="card" id="card">
+      <!-- Filled by JavaScript -->
+    </div>
+  </section>
+
+  <!-- 4. Research Section -->
+  <section id="research">
+    <h2>4. Research: defer vs async & document.write()</h2>
+
+    <h3>🔹 <code>defer</code> vs <code>async</code></h3>
+    <ul>
+      <li><strong>defer:</strong> Script is downloaded in parallel but executed after HTML parsing is complete (in order).</li>
+      <li><strong>async:</strong> Script is downloaded and executed as soon as it's ready, not in order.</li>
+    </ul>
+
+    <h3>🔹 <code>document.write()</code> Method</h3>
+    <p>
+      <code>document.write()</code> writes HTML or text directly to the document during loading. It's discouraged after the page has loaded, as it can overwrite the whole DOM. Better alternatives include <code>innerHTML</code> or DOM manipulation.
+    </p>
+  </section>
+ 
+  <script>
+    // Task 1: Primitive Data Types
+    let myString = "Hello World";          // string
+    let myNumber = 42;                     // number
+    let myBoolean = true;                  // boolean
+    let myNull = null;                     // null
+    let myUndefined;                       // undefined
+    let myBigInt = 1234567890123456789012345678901234567890n; // BigInt
+    let mySymbol = Symbol("id");           // symbol
+
+    console.log("Primitive Types:");
+    console.log("String:", myString, typeof myString);
+    console.log("Number:", myNumber, typeof myNumber);
+    console.log("Boolean:", myBoolean, typeof myBoolean);
+    console.log("Null:", myNull, typeof myNull); // object (quirk in JS)
+    console.log("Undefined:", myUndefined, typeof myUndefined);
+    console.log("BigInt:", myBigInt, typeof myBigInt);
+    console.log("Symbol:", mySymbol, typeof mySymbol);
+
+    // Task 2: Alert - undefined vs null
+    let a;
+    let b = null;
+    alert("a is undefined, typeof a: " + typeof a); // undefined
+    alert("b is null, typeof b: " + typeof b);      // object (weird JS behavior)
+
+    // Task 3: Profile Card using Concatenation
+    let name = "Vamshi";
+    let age = 22;
+    let city = "Hyderabad";
+    let profession = "Web Developer";
+
+    let profileText =
+      "Name: " + name + "<br>" +
+      "Age: " + age + "<br>" +
+      "City: " + city + "<br>" +
+      "Profession: " + profession;
+
+    document.getElementById("card").innerHTML = profileText;
+  </script>
+</body>
+</html>
